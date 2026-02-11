@@ -1,0 +1,219 @@
+/* Standings Page Styles */
+
+.standings-container {
+    max-width: 1200px;
+}
+
+.standings-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+}
+
+.standings-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.standings-header h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.standings-header p {
+    color: var(--text-secondary);
+}
+
+.standings-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: var(--spacing-lg);
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.standings-table thead {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.standings-table th {
+    padding: 16px 12px;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.standings-table th:first-child {
+    width: 60px;
+    text-align: left;
+}
+
+.standings-table th:nth-child(3),
+.standings-table th:nth-child(4),
+.standings-table th:nth-child(5),
+.standings-table th:nth-child(6),
+.standings-table th:nth-child(7),
+.standings-table th:nth-child(8),
+.standings-table th:nth-child(9),
+.standings-table th:nth-child(10) {
+    text-align: left;
+    width: 60px;
+}
+
+.standings-table td {
+    padding: 20px 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.standings-table tbody tr {
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.standings-table tbody tr:hover {
+    background-color: var(--hover-bg);
+}
+
+.standings-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.standings-table tbody tr:nth-child(-n+4)::before {
+    background-color: var(--accent-green);
+}
+
+.standings-table tbody tr:nth-last-child(-n+2)::before {
+    background-color: var(--accent-red);
+}
+
+.standings-table .position {
+    text-align: left;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+}
+
+.standings-table .team-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.team-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    color: white;
+    flex-shrink: 0;
+}
+
+.team-name-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+}
+
+.team-code {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+}
+
+.standings-table .stat {
+    text-align: left;
+    font-size: var(--font-size-base);
+}
+
+.standings-table .goal-diff {
+    text-align: left;
+    font-weight: 600;
+}
+
+.standings-table .goal-diff.positive {
+    color: var(--accent-green);
+}
+
+.standings-table .goal-diff.negative {
+    color: var(--accent-red);
+}
+
+.standings-table .points {
+    text-align: left;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    color: var(--accent-green);
+}
+
+/* Legend */
+.standings-legend {
+    display: flex;
+    gap: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.legend-indicator {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.legend-indicator.championship {
+    background-color: var(--accent-green);
+}
+
+.legend-indicator.relegation {
+    background-color: var(--accent-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .standings-card {
+        padding: var(--spacing-lg);
+    }
+
+    .standings-table th,
+    .standings-table td {
+        padding: 12px 8px;
+        font-size: var(--font-size-sm);
+    }
+
+    .team-badge {
+        width: 28px;
+        height: 28px;
+        font-size: var(--font-size-xs);
+    }
+
+    .standings-legend {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}

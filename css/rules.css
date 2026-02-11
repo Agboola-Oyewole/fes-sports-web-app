@@ -1,0 +1,193 @@
+/* Rules Page Styles */
+
+.header-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    background-color: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-green);
+    margin-right: var(--spacing-lg);
+}
+
+.page-header .header-content {
+    display: flex;
+    align-items: center;
+}
+
+.rules-container {
+    max-width: 900px;
+}
+
+.rules-header-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.rules-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.rules-header-card h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.rules-count {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+}
+
+/* Empty State */
+.rules-empty {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.rules-empty svg {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto var(--spacing-xl);
+    opacity: 0.2;
+    color: var(--text-secondary);
+}
+
+.rules-empty h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.rules-empty p {
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Rules List */
+.rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.rule-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.rule-card:hover {
+    border-color: var(--accent-green);
+    transform: translateX(4px);
+}
+
+.rule-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.rule-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+}
+
+.rule-title-section {
+    flex: 1;
+}
+
+.rule-category {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.rule-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.rule-meta {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+.rule-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: calc(48px + var(--spacing-md));
+}
+
+.rule-footer {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+    padding-left: calc(48px + var(--spacing-md));
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+/* Category Colors */
+.rule-category.gameplay {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--accent-blue);
+}
+
+.rule-category.conduct {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: var(--accent-red);
+}
+
+.rule-category.scoring {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+}
+
+.rule-category.general {
+    background-color: rgba(156, 163, 175, 0.2);
+    color: var(--text-secondary);
+}
