@@ -38,6 +38,15 @@
                 <p class="section-description">Select a league to view details and manage competitions</p>
             </div>
 
+            <div class="league-create">
+                <button class="btn btn-primary" onclick="showCreateLeagueModal()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 5v10M5 10h10" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                    Create League
+                </button>
+            </div>
+
             <div class="leagues-grid" id="leaguesGrid">
                 <!-- Leagues will be populated by JS -->
             </div>
@@ -67,7 +76,7 @@
             <div class="footer-links">
                 <a href="#" class="footer-link">About</a>
                 <a href="#" class="footer-link">Support</a>
-                <a href="pages/admin.html" class="footer-link" onclick="return checkAdminAccess(event)">Admin</a>
+                <a href="pages/admin.html" class="footer-link">Admin</a>
             </div>
         </footer>
     </div>
@@ -86,7 +95,6 @@
     </div>
 
     <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
     <script src="js/landing.js"></script>
 </body>
 
