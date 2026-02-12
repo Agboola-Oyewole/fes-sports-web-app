@@ -101,16 +101,20 @@
 
 /* Recent Results */
 .recent-results {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     gap: var(--spacing-md);
 }
 
 .result-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     padding: var(--spacing-md);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease;
+}
+
+.result-card {
+    text-align: center;
     background-color: var(--bg-tertiary);
     border-radius: var(--radius-md);
     transition: background-color 0.2s ease;
@@ -121,8 +125,7 @@
 }
 
 .result-teams {
-    display: flex;
-    align-items: center;
+    text-align: center;
     gap: var(--spacing-md);
     flex: 1;
 }
@@ -193,13 +196,13 @@
 
 /* Upcoming Matches */
 .upcoming-matches {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     gap: var(--spacing-md);
 }
 
 .match-item {
     padding: var(--spacing-md);
+    text-align: center;
     background-color: var(--bg-tertiary);
     border-radius: var(--radius-md);
     transition: background-color 0.2s ease;
@@ -211,6 +214,7 @@
 
 .match-status {
     display: inline-block;
+    text-align: center;
     padding: 4px 12px;
     border-radius: 12px;
     font-size: var(--font-size-xs);
@@ -253,6 +257,8 @@
 
 .match-details {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: var(--spacing-md);
     font-size: var(--font-size-sm);
     color: var(--text-secondary);

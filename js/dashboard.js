@@ -69,7 +69,8 @@ function loadRecentResults(leagueId) {
         const awayWon = match.awayScore > match.homeScore;
 
         return `
-            <div class="result-item">
+        <div class="result-item">
+            <div class="result-card">
                 <div class="result-teams">
                     <span class="result-team ${homeWon ? 'winner' : ''}">${homeTeam.name}</span>
                     <span class="result-score">
@@ -78,9 +79,10 @@ function loadRecentResults(leagueId) {
                         <span class="${awayWon ? 'winner-score' : ''}">${match.awayScore}</span>
                     </span>
                     <span class="result-team ${awayWon ? 'winner' : ''}">${awayTeam.name}</span>
-                </div>
-                <span class="result-date">${formatDate(match.date)}</span>
+                </div>    
             </div>
+            <span class="result-date">${formatDate(match.date)}</span>
+        </div>
         `;
     }).join('');
 }
@@ -129,11 +131,14 @@ function loadUpcomingMatches(leagueId) {
 
         return `
             <div class="match-item">
+            <div class="match-card">
                 <span class="match-status scheduled">SCHEDULED</span>
                 <div class="match-teams">
                     <span class="match-team">${homeTeam.name}</span>
                     <span class="match-vs">VS</span>
                     <span class="match-team">${awayTeam.name}</span>
+                </div>
+                
                 </div>
                 <div class="match-details">
                     <span class="match-detail">

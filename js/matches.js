@@ -128,7 +128,7 @@ function renderMatchCard(match) {
             
             <div class="match-teams-container">
                 <div class="match-team ${homeWinner ? 'winner' : ''}">
-                    <div class="match-team-badge">${homeTeam.code}</div>
+                
                     <div class="match-team-info">
                         <span class="match-team-name">${homeTeam.name}</span>
                         <span class="match-team-code">${homeTeam.code}</span>
@@ -148,7 +148,6 @@ function renderMatchCard(match) {
                 </div>
                 
                 <div class="match-team away ${awayWinner ? 'winner' : ''}">
-                    <div class="match-team-badge">${awayTeam.code}</div>
                     <div class="match-team-info">
                         <span class="match-team-name">${awayTeam.name}</span>
                         <span class="match-team-code">${awayTeam.code}</span>
