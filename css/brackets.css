@@ -86,7 +86,10 @@
 /* Bracket Visualization */
 .bracket-visualization {
     overflow-x: auto;
+    overflow-y: visible;
     padding: var(--spacing-lg) 0;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
 }
 
 .bracket-rounds {

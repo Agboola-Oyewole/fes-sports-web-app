@@ -12,6 +12,12 @@
     margin-right: var(--spacing-lg);
 }
 
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .page-header .header-content {
     display: flex;
     align-items: center;

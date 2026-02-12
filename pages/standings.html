@@ -13,6 +13,16 @@
 </head>
 
 <body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+    </button>
+    
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -32,7 +42,7 @@
             </div>
 
             <nav class="sidebar-nav">
-                <a href="index.html" class="nav-item active">
+                <a href="../dashboard.html" class="nav-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                         class="bi bi-columns-gap" viewBox="0 0 16 16">
                         <path
@@ -171,6 +181,8 @@
     </div>
 
     <script src="../js/storage.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="js/auth.js"></script>
     <script src="../js/standings.js"></script>
 </body>
 
