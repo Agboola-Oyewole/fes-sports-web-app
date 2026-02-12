@@ -17,11 +17,9 @@ function setAuthentication(value) {
 
 // Check admin access and show password dialog
 function checkAdminAccess(event) {
-    const currentPage = window.location.pathname;
     if (event) {
-        if (!currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('fes-sports/')) {
-            event.preventDefault();
-        }
+        event.preventDefault();
+
     }
 
     // If already authenticated, allow access
