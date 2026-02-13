@@ -1171,3 +1171,84 @@ function formatDate(dateString) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
+
+// Edit Match Function
+function editMatch(id) {
+    const match = storage.getMatch(id);
+    const homeTeam = storage.getTeam(match.homeTeam);
+    const awayTeam = storage.getTeam(match.awayTeam);
+    
+    const html = `
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Edit Match</h2>
+                <button class="modal-close" onclick="closeEditMatchModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Match</label>
+                    <div style="padding: 12px; background: var(--bg-tertiary); border-radius: 8px; margin-bottom: 16px;">
+                        <strong>${homeTeam.name}</strong> vs <strong>${awayTeam.name}</strong>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="matchStatus">Status</label>
+                    <select id="matchStatus" style="width: 100%; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-family: inherit;">
+                        <option value="scheduled" ${match.status === 'scheduled' ? 'selected' : ''}>Scheduled</option>
+                        <option value="live" ${match.status === 'live' ? 'selected' : ''}>Live</option>
+                        <option value="completed" ${match.status === 'completed' ? 'selected' : ''}>Completed</option>
+                    </select>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label for="homeScore">${homeTeam.name} Score</label>
+                        <input type="number" id="homeScore" value="${match.homeScore || 0}" min="0" style="width: 100%; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-family: inherit;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="awayScore">${awayTeam.name} Score</label>
+                        <input type="number" id="awayScore" value="${match.awayScore || 0}" min="0" style="width: 100%; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-family: inherit;">
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 16px; margin-top: 24px;">
+                    <button onclick="closeEditMatchModal()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+                    <button onclick="saveMatchEdit('${id}')" class="btn btn-primary" style="flex: 1;">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const modal = document.createElement('div');
+    modal.className = 'modal active';
+    modal.id = 'editMatchModal';
+    modal.innerHTML = html;
+    modal.onclick = function(e) {
+        if (e.target === modal) closeEditMatchModal();
+    };
+    document.body.appendChild(modal);
+}
+
+function closeEditMatchModal() {
+    const modal = document.getElementById('editMatchModal');
+    if (modal) modal.remove();
+}
+
+function saveMatchEdit(matchId) {
+    const status = document.getElementById('matchStatus').value;
+    const homeScore = parseInt(document.getElementById('homeScore').value) || 0;
+    const awayScore = parseInt(document.getElementById('awayScore').value) || 0;
+    
+    const updateData = {
+        status: status,
+        homeScore: homeScore,
+        awayScore: awayScore
+    };
+    
+    storage.updateMatch(matchId, updateData);
+    closeEditMatchModal();
+    loadMatchesAdmin();
+    alert('Match updated successfully!');
+}

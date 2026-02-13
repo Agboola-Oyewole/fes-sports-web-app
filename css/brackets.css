@@ -1,5 +1,10 @@
 /* Brackets Page Styles */
 
+/* Override main-content overflow for brackets page */
+body:has(.bracket-visualization) .main-content {
+    overflow-x: visible;
+}
+
 .bracket-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -53,6 +58,7 @@
     padding: var(--spacing-xl);
     border: 1px solid var(--border-color);
     margin-bottom: var(--spacing-xl);
+    overflow: visible;
 }
 
 .bracket-header {
@@ -87,15 +93,37 @@
 .bracket-visualization {
     overflow-x: auto;
     overflow-y: visible;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-left: calc(-1 * var(--spacing-xl));
+    margin-right: calc(-1 * var(--spacing-xl));
     -webkit-overflow-scrolling: touch;
-    max-width: 100%;
+    width: calc(100% + (var(--spacing-xl) * 2));
+}
+
+/* Custom scrollbar for bracket */
+.bracket-visualization::-webkit-scrollbar {
+    height: 12px;
+}
+
+.bracket-visualization::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+}
+
+.bracket-visualization::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 6px;
+}
+
+.bracket-visualization::-webkit-scrollbar-thumb:hover {
+    background: #34D399;
 }
 
 .bracket-rounds {
     display: flex;
     gap: 80px;
-    min-width: fit-content;
+    min-width: max-content;
+    width: max-content;
 }
 
 .bracket-round {
